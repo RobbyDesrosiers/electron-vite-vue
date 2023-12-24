@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import PaginationTest from './components/PaginationTest.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <PaginationTest></PaginationTest>
+  <router-view></router-view>
 </template>
 
 <style>
