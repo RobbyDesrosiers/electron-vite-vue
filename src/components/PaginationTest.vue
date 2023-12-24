@@ -126,6 +126,7 @@ class DynamicPagination<T> {
     if (this.scrollTimer !== null) {
       clearTimeout(this.scrollTimer);
     }
+    // @ts-expect-error
     this.scrollTimer = setTimeout(async () => {
       // todo make callback for options here
       await this.fetchRecords();
@@ -286,8 +287,6 @@ const dynamicPagination = useDynamicPagination<any>({
       "
     >
       <div>Indexes</div>
-      <div>{{ dynamicPagination.currentlyViewedIndexes }}</div>
-      <div>Total Count: {{ dynamicPagination.apiData.count }}</div>
       <button @click="dynamicPagination.reset()">Reset</button>
       <div>Pages Called</div>
       <div v-for="page in pageCalled">{{ page }}</div>
